@@ -1,8 +1,18 @@
 <div class="container">
   <h1 class="mt-5">Realizar la consigna debajo de este mensaje</h1>
 </div>
-
-<!-- Html faltante -->
 <div>
-  <button class="btn btn-primary" (click)="randomMethod()">Search</button>
+  <input placeholder="Search by user id"/>
+  <button class="btn btn-primary" (click)="filterByUserId()">Search</button>
 </div>
+
+<div class="todos_container">
+<div *ngFor="let todo of todos">
+    <div class="todo_container">
+      <p>Title: {{todo.title}}</p>
+      <button (click)="getDetails(todo.id)">Get Details</button>
+    </div>
+</div>
+<p *ngIf="todos.length===0">No Todo's for this userId</p>
+</div>
+
